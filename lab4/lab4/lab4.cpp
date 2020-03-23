@@ -6,27 +6,18 @@
 #include "Note.h"
 #include "UI.h"
 #include "tests.h"
+#include "Service.h"
 
 using namespace std;
 
 int main()
 {
     Repo r;
+    Service s;
     char op = ' ';
-    test_constructor1();
-    test_constructor2();
-    test_get_name();
-    test_get_date();
-    test_get_grade();
-    test_set_date();
-    test_set_grade();
-    test_set_name();
-    test_op_attrib();
-    test_op_equals();
-    test_constructor_repo();
-    test_add_grade();
-    test_get_all();
-    test_get_size();
+
+    all_tests();
+
     while (true)
     {
         show_menu();
@@ -47,7 +38,7 @@ int main()
                 cout << "Introduceti nota: ";
                 cin >> grade;
                 Note n(name, date, grade);
-                r.add_grade(n);
+                s.add_grade(n);
                 delete[] name;
                 delete[] date;
                 cout << endl;
@@ -55,10 +46,45 @@ int main()
             }
             case '2':
             {
-                Note* afis = r.get_all();
-                for (int i = 0; i < r.get_size(); i++)
+                Note* afis = s.get_all();
+                for (int i = 0; i < s.get_size(); i++)
                     cout << afis[i] << endl;
                 cout << endl;
+                break;
+            }
+            case '3':
+            {
+                char* given_name = new char[50];
+                char* new_date = new char[11];
+                int new_grade = 0;
+                cout << "Insert name of modified entry: ";
+                cin >> given_name;
+                cout << "Insert new date: ";
+                cin >> new_date;
+                cout << "Insert new grade: ";
+                cin >> new_grade;
+                cout << endl;
+                s.modify_grade(given_name, new_date, new_grade);
+                cout << "Entry modified successfully!" << endl << endl;
+                break;
+            }
+            case '4':
+            {
+                char* given_name = new char[50];
+                cout << "Insert name of deleted entry: ";
+                cin >> given_name;
+                s.delete_grade(given_name);
+                cout << "Entry deleted successfully!";
+                cout << endl << endl;
+                break;
+            }
+            case '5':
+            {
+                char* given_name = new char[50];
+                cout << "Insert name of searched entry: ";
+                cin >> given_name;
+                cout << s.find_elem(given_name);
+                cout << endl << endl;
                 break;
             }
             case 'x':

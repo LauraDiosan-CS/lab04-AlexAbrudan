@@ -1,16 +1,15 @@
 #pragma once
-#include "Note.h"
+#include "Repo.h"
 
 
-class Repo
+class Service
 {
 private:
-	Note list[25];
-	int dim;
-	
+	Repo r;
+
 public:
-	Repo();
-	~Repo();
+	Service();
+	~Service();
 	void add_grade(Note n);
 	void modify_grade(char* given_name, char* new_date, int new_grade);
 	void delete_grade(char* given_name);

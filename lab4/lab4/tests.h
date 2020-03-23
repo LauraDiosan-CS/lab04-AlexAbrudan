@@ -2,6 +2,7 @@
 #include "Note.h"
 #include "Repo.h"
 #include <assert.h>
+#include "Service.h"
 
 //Note tests
 void test_constructor1();
@@ -21,3 +22,17 @@ void test_constructor_repo();
 void test_add_grade();
 void test_get_all();
 void test_get_size();
+void test_modify_grade();
+void test_del_grade();
+void test_find_elem();
+
+//Service tests
+void test_add_s();
+void test_get_all_s();
+void test_get_size_s();
+void test_modif_s();
+void test_del_s();
+void test_find_s();
+
+//All tests
+void all_tests();

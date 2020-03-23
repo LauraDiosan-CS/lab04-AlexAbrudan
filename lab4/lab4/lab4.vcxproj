@@ -150,12 +150,14 @@
     <ClCompile Include="lab4.cpp" />
     <ClCompile Include="Note.cpp" />
     <ClCompile Include="Repo.cpp" />
+    <ClCompile Include="Service.cpp" />
     <ClCompile Include="tests.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Note.h" />
     <ClInclude Include="Repo.h" />
+    <ClInclude Include="Service.h" />
     <ClInclude Include="tests.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
