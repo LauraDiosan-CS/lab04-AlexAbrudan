@@ -152,14 +152,14 @@
     <ClCompile Include="Repo.cpp" />
     <ClCompile Include="Service.cpp" />
     <ClCompile Include="tests.cpp" />
-    <ClCompile Include="UI.cpp" />
+    <ClCompile Include="UserInterface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Note.h" />
     <ClInclude Include="Repo.h" />
     <ClInclude Include="Service.h" />
     <ClInclude Include="tests.h" />
-    <ClInclude Include="UI.h" />
+    <ClInclude Include="UserInterface.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

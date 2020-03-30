@@ -16,5 +16,10 @@ public:
 	Note find_elem(char* given_name);
 	Note* get_all();
 	int get_size();
+
+	Note* get_grades(int given_grade);
+	void add_point(char* given_name);
+	int dim_vector(int given_grade);
+	void remove_point(char* given_name);
 };
 

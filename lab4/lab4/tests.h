@@ -33,6 +33,9 @@ void test_get_size_s();
 void test_modif_s();
 void test_del_s();
 void test_find_s();
+void test_get_grades();
+void test_add_point();
+void test_remove_points();
 
 //All tests
 void all_tests();

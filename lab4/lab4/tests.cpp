@@ -376,6 +376,55 @@ void test_find_s()
 	assert(s.find_elem(name) == n);
 }
 
+void test_get_grades()
+{
+	char* name = new char[strlen("Ion") + 1];
+	char* date = new char[strlen("20/01/2000") + 1];
+	strcpy_s(name, sizeof "Ion", "Ion");
+	strcpy_s(date, sizeof "20/01/2000", "20/01/2000");
+	Note n1(name, date, 8);
+
+	char* name2 = new char[strlen("Misu") + 1];
+	char* date2 = new char[strlen("20/01/2000") + 1];
+	strcpy_s(name2, sizeof "Misu", "Misu");
+	strcpy_s(date2, sizeof "20/01/2000", "20/01/2000");
+	Note n2(name2, date2, 10);
+
+	Service s;
+	s.add_grade(n1);
+	s.add_grade(n2);
+
+	assert(s.get_grades(8)[0] == n2);
+}
+
+void test_add_point()
+{
+	char* name = new char[strlen("Ion") + 1];
+	char* date = new char[strlen("20/01/2000") + 1];
+	strcpy_s(name, sizeof "Ion", "Ion");
+	strcpy_s(date, sizeof "20/01/2000", "20/01/2000");
+	Note n1(name, date, 8);
+
+	Service s;
+	s.add_grade(n1);
+	s.add_point(name);
+	assert(s.get_all()[0].get_grade() == 9);
+}
+
+void test_remove_points()
+{
+	char* name = new char[strlen("Ion") + 1];
+	char* date = new char[strlen("20/01/2000") + 1];
+	strcpy_s(name, sizeof "Ion", "Ion");
+	strcpy_s(date, sizeof "20/01/2000", "20/01/2000");
+	Note n1(name, date, 8);
+
+	Service s;
+	s.add_grade(n1);
+	s.remove_point(n1.get_name());
+	assert(s.get_all()[0].get_grade() == 7);
+}
+
 void all_tests()
 {
 	test_constructor1();
@@ -401,4 +450,7 @@ void all_tests()
 	test_modif_s();
 	test_del_s();
 	test_find_s();
+	test_get_grades();
+	test_add_point();
+	test_remove_points();
 }

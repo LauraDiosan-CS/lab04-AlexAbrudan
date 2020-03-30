@@ -2,98 +2,21 @@
 //
 
 #include <iostream>
+#include <queue>
+#include <stack>
 #include "Repo.h"
 #include "Note.h"
-#include "UI.h"
 #include "tests.h"
 #include "Service.h"
+#include "UserInterface.h"
 
 using namespace std;
 
 int main()
 {
-    Repo r;
-    Service s;
-    char op = ' ';
-
+    UserInterface u;
     all_tests();
-
-    while (true)
-    {
-        show_menu();
-        cout << "Introduceti optiunea: ";
-        cin >> op;
-        cout << endl;
-        switch (op)
-        {
-            case '1':
-            {
-                int grade = 0;
-                char* name = new char[50];
-                char* date = new char[11];
-                cout << "Introduceti numele: ";
-                cin >> name;
-                cout << "Introduceti data: ";
-                cin >> date;
-                cout << "Introduceti nota: ";
-                cin >> grade;
-                Note n(name, date, grade);
-                s.add_grade(n);
-                delete[] name;
-                delete[] date;
-                cout << endl;
-                break;
-            }
-            case '2':
-            {
-                Note* afis = s.get_all();
-                for (int i = 0; i < s.get_size(); i++)
-                    cout << afis[i] << endl;
-                cout << endl;
-                break;
-            }
-            case '3':
-            {
-                char* given_name = new char[50];
-                char* new_date = new char[11];
-                int new_grade = 0;
-                cout << "Insert name of modified entry: ";
-                cin >> given_name;
-                cout << "Insert new date: ";
-                cin >> new_date;
-                cout << "Insert new grade: ";
-                cin >> new_grade;
-                cout << endl;
-                s.modify_grade(given_name, new_date, new_grade);
-                cout << "Entry modified successfully!" << endl << endl;
-                break;
-            }
-            case '4':
-            {
-                char* given_name = new char[50];
-                cout << "Insert name of deleted entry: ";
-                cin >> given_name;
-                s.delete_grade(given_name);
-                cout << "Entry deleted successfully!";
-                cout << endl << endl;
-                break;
-            }
-            case '5':
-            {
-                char* given_name = new char[50];
-                cout << "Insert name of searched entry: ";
-                cin >> given_name;
-                cout << s.find_elem(given_name);
-                cout << endl << endl;
-                break;
-            }
-            case 'x':
-            {
-                exit(0);
-                break;
-            }
-        }
-    }
+    u.OwO();
     return 0;
 }
 
